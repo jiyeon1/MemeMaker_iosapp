@@ -2,5 +2,6 @@
 
 ### practice making an ios app   
 
-<img width="220" alt="1" src="https://user-images.githubusercontent.com/48276522/103478504-90264a00-4e0a-11eb-8f31-b37e65aa6e0c.png">
-<img width="220" alt="2" src="https://user-images.githubusercontent.com/48276522/103478505-91577700-4e0a-11eb-80e5-dc5cf0e214d4.png">
+
+<img width="600" alt="스크린샷 2021-01-03 21 36 52" src="https://user-images.githubusercontent.com/48276522/103478698-d4feb080-4e0b-11eb-96e6-c03b3bac9fa0.png">
+

@@ -16,26 +16,77 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="meme maker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TDP-z1-XkH">
-                                <rect key="frame" x="158" y="101" width="99" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="toptitle" text="선택한 나라의 대표 음식과 랜드마크를 알려줍니다!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TDP-z1-XkH" customClass="toptitle" customModule="MemeMaker" customModuleProvider="target">
+                                <rect key="frame" x="39" y="104" width="336" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="imageView" translatesAutoresizingMaskIntoConstraints="NO" id="fGi-Dp-Y7B" customClass="imageView" customModule="MemeMaker" customModuleProvider="target">
+                                <rect key="frame" x="50" y="365" width="314" height="125"/>
+                                <color key="tintColor" systemColor="systemGrayColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="125" id="KVd-ln-REu"/>
+                                </constraints>
+                            </imageView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" restorationIdentifier="topSegment" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="mJt-dv-EwI" customClass="topSegment" customModule="MemeMaker" customModuleProvider="target">
+                                <rect key="frame" x="108.5" y="185" width="200" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="QCp-1f-DRw"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="🇰🇷"/>
+                                    <segment title="🇺🇸"/>
+                                    <segment title="🇬🇧"/>
+                                </segments>
+                                <connections>
+                                    <action selector="topSegment:" destination="BYZ-38-t0r" eventType="valueChanged" id="6iM-o8-HQF"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" restorationIdentifier="bottomSegment" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="qAs-5t-Af3" customClass="bottomSegment" customModule="MemeMaker" customModuleProvider="target">
+                                <rect key="frame" x="171" y="264" width="75" height="32"/>
+                                <segments>
+                                    <segment title="🍽"/>
+                                    <segment title="🗽"/>
+                                </segments>
+                                <connections>
+                                    <action selector="bottomSegment:" destination="BYZ-38-t0r" eventType="valueChanged" id="h28-4A-e9d"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mJt-dv-EwI" firstAttribute="centerX" secondItem="qAs-5t-Af3" secondAttribute="centerX" id="66r-rg-xzK"/>
+                            <constraint firstItem="mJt-dv-EwI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="108.5" id="7tz-Id-wPi"/>
+                            <constraint firstItem="mJt-dv-EwI" firstAttribute="top" secondItem="TDP-z1-XkH" secondAttribute="bottom" constant="60" id="8Ib-OX-5XP"/>
+                            <constraint firstItem="TDP-z1-XkH" firstAttribute="centerX" secondItem="fGi-Dp-Y7B" secondAttribute="centerX" id="D8e-og-Wrg"/>
+                            <constraint firstItem="fGi-Dp-Y7B" firstAttribute="top" secondItem="mJt-dv-EwI" secondAttribute="bottom" constant="150" id="IXs-g8-iwx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fGi-Dp-Y7B" secondAttribute="trailing" constant="50" id="MIa-fn-2aG"/>
+                            <constraint firstItem="TDP-z1-XkH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="efz-Sz-z1e"/>
+                            <constraint firstItem="qAs-5t-Af3" firstAttribute="top" secondItem="mJt-dv-EwI" secondAttribute="bottom" constant="49" id="fkn-Ok-g9C"/>
+                            <constraint firstItem="qAs-5t-Af3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="171" id="l5K-Ak-dVi"/>
+                            <constraint firstItem="fGi-Dp-Y7B" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="yhs-Qb-J6w"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bottomSegment" destination="qAs-5t-Af3" id="tVG-Be-R9s"/>
+                        <outlet property="imageView" destination="fGi-Dp-Y7B" id="8T4-7r-ju7"/>
+                        <outlet property="topSegment" destination="mJt-dv-EwI" id="n88-6s-a7f"/>
+                        <outlet property="toptitle" destination="TDP-z1-XkH" id="JfV-AJ-Qjc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="30" y="84"/>
+            <point key="canvasLocation" x="93" y="28"/>
         </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
